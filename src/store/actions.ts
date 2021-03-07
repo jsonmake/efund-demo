@@ -1,0 +1,22 @@
+import { IState, ITodo } from '@/typings';
+import { Commit } from 'vuex';
+import {SET_TODO} from './actionType';
+interface ICtx{
+    commit:Commit,
+    state?:IState
+}
+export default{
+    [SET_TODO]({commit}:ICtx,todo:ITodo):void{
+        commit(SET_TODO,todo);
+    }
+}
+/*
+等同于
+function test(){
+
+}
+test()
+=>等同于
+const TEST = 'test' //函数名
+window[TEST]()
+*/
